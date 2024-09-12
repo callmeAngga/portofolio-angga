@@ -1,0 +1,58 @@
+'use client'
+
+import { useRef, useEffect, useState } from "react";
+import Link from "next/link";
+
+interface NavLink {
+    path: string;
+    display: string;
+}
+
+const NAV_LINK: NavLink[] = [
+    { path: '/', display: 'HOME' },
+    { path: '#about', display: 'ABOUT' },
+    { path: '#skill', display: 'SKILL' },
+    { path: '#project', display: 'PROJEK' },
+    { path: '#blog', display: 'BLOG' },
+    { path: '#contact', display: 'CONTACT' },
+];
+
+export default function Navbar() {
+    const navbarRef = useRef<HTMLElement | null>(null);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    const handleScroll = () => {
+        (window.scrollY > 100) ? setIsScrolled(true) : setIsScrolled(false);
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    return (
+        <>
+            <nav ref={navbarRef} className={`h-20 left-0 top-0 flex sticky bg-card dark:bg-cardDark px-10 z-50 items-center transition-all duration-300 ${isScrolled ? 'w-2/5 transform rounded-full top-7' : 'w-full ' }`}>
+                {/* Logo */}
+                <div className={`h-full flex items-center ${isScrolled ? 'hidden transition-all duration-300' : 'block'}`}>
+                    <h1 className="text-white text-2xl">Logo</h1>
+                </div>
+
+                {/* Navbar Link */}
+                <div className={`h-full flex mx-auto space-x-5 items-center ${isScrolled ? 'justify-center space-x-7' : ''}`}>
+                    {NAV_LINK.map((item, index) => (
+                        <Link href={item.path} key={index}>
+                            <span className="text-text dark:text-textDark text-sm tracking-widest font-semibold hover:text-accent cursor-pointer">{item.display}</span>
+                        </Link>
+                    ))}
+                </div>
+
+                {/* Navbar Option */}
+                <div className={`h-full flex items-center ${isScrolled ? 'hidden transition-all duration-300' : 'block'}`}>
+                    <button className="text-white">Options</button>
+                </div>
+            </nav>
+        </>
+    );
+}
+
