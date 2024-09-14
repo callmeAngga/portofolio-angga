@@ -27,7 +27,7 @@ export default function Navbar() {
     const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
     const handleScroll = () => {
-        (window.scrollY > 100) ? setIsScrolled(true) : setIsScrolled(false);
+        (window.scrollY > 70) ? setIsScrolled(true) : setIsScrolled(false);
     }
 
     useEffect(() => {
@@ -59,10 +59,10 @@ export default function Navbar() {
 
     return (
         <>
-            <nav ref={navbarRef} className={`h-20 left-0 top-0 flex sticky bg-card dark:bg-cardDark px-10 z-50 items-center transition-all duration-300 ${isScrolled ? 'w-2/5 transform rounded-full top-7' : 'w-full ' }`}>
+            <nav ref={navbarRef} className={`h-20 left-0 top-0 flex sticky bg-card dark:bg-cardDark px-10 z-50 items-center transition-all duration-300 ${isScrolled ? 'w-150 transform rounded-full top-7' : 'w-full ' }`}>
                 {/* Logo */}
                 <div className={`h-full flex items-center ${isScrolled ? 'hidden transition-all duration-300' : 'block'}`}>
-                    <Image src={logoImg} alt="Logo One Piece" width={32} height={32} className="object-contain" />
+                    <Image src={logoImg} alt="Logo One Piece" width={65} height={65} className="object-contain" />
                     <p className="ml-2">
                         <span className="font-bold text-acc">Angga</span><span className="italic font-medium">pras.</span>
                     </p>

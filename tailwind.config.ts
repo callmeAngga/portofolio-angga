@@ -13,10 +13,27 @@ const config: Config = {
       //   background: "var(--background)",
       //   foreground: "var(--foreground)",
       // },
+      width: {
+        '150': '40rem'
+      },
+      fontSize: {
+        '4xl': ['2.25rem', '1.5'],
+        '5xl': ['3rem', '1.5'],
+        '6xl': ['3.75rem', '1.5'],
+        '7xl': ['4.5rem', '1.5'],
+        '8xl': ['6rem', '1.5'],
+      },
       maxWidth: {
-        '8xl': '90rem',
-        '9xl': '100rem',
-        '10xl': '110rem'
+        '8xl': '90rem', // 1440 px
+        '9xl': '100rem', // 1600 px
+        '10xl': '110rem' // 1760 px
+      },
+      screens: {
+        'xs': '30rem', //480 px
+        'sm': '40rem', //
+        'md': '60rem',
+        'lg': '85rem',
+        'xl': '97rem',
       },
       colors: {
         'background': '#FFFFFF',
