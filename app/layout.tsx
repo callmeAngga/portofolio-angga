@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { jakartaSans } from "./fonts";
 import "./globals.css";
+import { ThemeProvider } from "./ui/components/theme-provider";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -25,8 +26,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jakartaSans.className} antialiased bg-background dark:bg-backgroundDark`}>
-        {children}
+      <body className={`${jakartaSans.className} antialiased`}>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
       </body>
     </html>
   );

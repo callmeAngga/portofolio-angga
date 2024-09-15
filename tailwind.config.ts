@@ -40,19 +40,22 @@ const config: Config = {
         'xl': '97rem',
       },
       colors: {
-        'background': '#FFFFFF',
-        'backgroundDark': '#23272F',
-
-        'text': '#3E4148',
-        'textDark': '#F6F7F9',
-
+        // Light Theme
+        'background': '#ECFCD5',
+        'secBackground': '#E5F4A5',
+        'normalText': '#3E4148',
         'textHeader': '#23272F',
-        'textHeaderDark': '#F6F7F9',
+        'card': '#F6F7F9',
 
+        // Dark Theme
+        'backgroundDark': '#23272F',
+        'normalTextDark': '#F6F7F9',
+        'textHeaderDark': '#F6F7F9',
+        'cardDark': '#343A46',
+
+        // Netral
         'accent': '#087EA4',
 
-        'card': '#F6F7F9',
-        'cardDark': '#343A46',
       }
     },
   },

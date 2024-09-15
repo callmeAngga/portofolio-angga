@@ -6,11 +6,11 @@ html {
   scroll-behavior: smooth;
 }
 
-@layer base {
+/* @layer base {
   body {
     @apply dark:bg-backgroundDark bg-background;
   }
-} 
+}  */
 
 .container {
   max-width: 110rem; /* or whatever maximum width you prefer */
@@ -21,9 +21,13 @@ html {
 }
 
 .stroke-text {
-  -webkit-text-stroke: 2px white; 
+  @apply text-transparent;
+  -webkit-text-stroke: 2px theme('colors.normalText');
 }
 
+.dark .stroke-text {
+  -webkit-text-stroke: 2px theme('colors.normalTextDark');
+}
 
   @media (min-width: 85rem /* 1360px */) {
     .lg\:text-7xl {
