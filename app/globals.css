@@ -6,6 +6,20 @@ html {
   scroll-behavior: smooth;
 }
 
+@layer base {
+  body {
+    @apply dark:bg-backgroundDark bg-background;
+  }
+} 
+
+.container {
+  max-width: 110rem; /* or whatever maximum width you prefer */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .stroke-text {
   -webkit-text-stroke: 2px white; 
 }

@@ -2,6 +2,10 @@
 
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
+import Image  from "next/image";
+import logoImg from '../../../public/images/one_piece.png'
+import sunImg from '../../../public/images/sun.png'
+// import moonImg from '../../../public/images/moon.png'
 
 interface NavLink {
     path: string;
@@ -12,7 +16,7 @@ const NAV_LINK: NavLink[] = [
     { path: '/', display: 'HOME' },
     { path: '#about', display: 'ABOUT' },
     { path: '#skill', display: 'SKILL' },
-    { path: '#project', display: 'PROJEK' },
+    { path: '#project', display: 'PROJECT' },
     { path: '#blog', display: 'BLOG' },
     { path: '#contact', display: 'CONTACT' },
 ];
@@ -22,7 +26,7 @@ export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     const handleScroll = () => {
-        (window.scrollY > 100) ? setIsScrolled(true) : setIsScrolled(false);
+        (window.scrollY > 70) ? setIsScrolled(true) : setIsScrolled(false);
     }
 
     useEffect(() => {
@@ -32,10 +36,13 @@ export default function Navbar() {
 
     return (
         <>
-            <nav ref={navbarRef} className={`h-20 left-0 top-0 flex sticky bg-card dark:bg-cardDark px-10 z-50 items-center transition-all duration-300 ${isScrolled ? 'w-2/5 transform rounded-full top-7' : 'w-full ' }`}>
+            <nav ref={navbarRef} className={`h-20 left-0 top-0 flex sticky bg-card dark:bg-cardDark px-10 z-50 items-center transition-all duration-300 ${isScrolled ? 'w-150 transform rounded-full top-7' : 'w-full ' }`}>
                 {/* Logo */}
                 <div className={`h-full flex items-center ${isScrolled ? 'hidden transition-all duration-300' : 'block'}`}>
-                    <h1 className="text-white text-2xl">Logo</h1>
+                    <Image src={logoImg} alt="Logo One Piece" width={65} height={65} className="object-contain" />
+                    <p className="ml-2">
+                        <span className="font-bold text-acc">Angga</span><span className="italic font-medium">pras.</span>
+                    </p>
                 </div>
 
                 {/* Navbar Link */}
@@ -47,12 +54,19 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                {/* Navbar Option */}
+                {/* Theme Switcher */}
                 <div className={`h-full flex items-center ${isScrolled ? 'hidden transition-all duration-300' : 'block'}`}>
-                    <button className="text-white">Options</button>
+                    <button  className="flex items-center justify-center w-10 h-10 hover:bg-card dark:hover:bg-cardDark rounded-full focus:outline-none">
+                        <Image 
+                            // src={theme === 'light' ? sunImg : moonImg}
+                            src={sunImg}
+                            alt="Toggle Theme" 
+                            width={24} 
+                            height={24} 
+                        />
+                    </button>
                 </div>
             </nav>
         </>
     );
 }
-

@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: 'selector',
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,6 +15,10 @@ const config: Config = {
       // },
       width: {
         '150': '40rem'
+      },
+      container: {
+        center: true,
+        padding: '1rem',
       },
       fontSize: {
         '4xl': ['2.25rem', '1.5'],
