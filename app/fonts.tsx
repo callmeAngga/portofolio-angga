@@ -1,4 +1,4 @@
-import { Plus_Jakarta_Sans as JakartaSans, Roboto_Slab } from 'next/font/google'
+import { Plus_Jakarta_Sans as JakartaSans, Roboto_Slab, Dancing_Script, Shantell_Sans } from 'next/font/google'
 
 export const jakartaSans = JakartaSans({
     subsets: ['latin'],
@@ -9,5 +9,15 @@ export const jakartaSans = JakartaSans({
 export const robotoSlab = Roboto_Slab({
     subsets: ['latin'],
     weight: ['900'],
+})
+
+export const dancingScript = Dancing_Script({
+    subsets: ['latin'],
+    // weight: ['600']
+})
+
+export const shantelSans = Shantell_Sans({
+    subsets: ['latin'],
+    // weight: ['600']
 })
 

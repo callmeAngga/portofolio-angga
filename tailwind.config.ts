@@ -43,6 +43,7 @@ const config: Config = {
         // Light Theme
         'background': '#ECFCD5',
         'secBackground': '#E5F4A5',
+        'thirdBackground': '#2C7865',
         'normalText': '#3E4148',
         'textHeader': '#23272F',
         'card': '#F6F7F9',
