@@ -25,6 +25,21 @@ html {
   -webkit-text-stroke: 2px theme('colors.normalText');
 }
 
+.scroller {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroll_inner {
+  flex-wrap:  nowrap;
+  width: max-content;
+}
+
+.svg-color {
+  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+}
+
 .dark .stroke-text {
   -webkit-text-stroke: 2px theme('colors.normalTextDark');
 }

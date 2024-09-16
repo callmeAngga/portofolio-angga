@@ -27,11 +27,11 @@ import React from 'react';
 
 export default function CardAccent() {
     return (
-        <div className="relative w-64 h-40 flex flex-col items-center">
+        <div className="relative w-64 h-24 flex flex-col items-center">
             <div className={`w-12 h-12 mx-auto absolute rounded-full bg-white dark:bg-black border-[10px] border-solid border-background dark:border-cardDark transform -translate-y-1/2`}>
             </div>
 
-            <div className="w-full h-28 flex flex-col justify-evenly bg-background dark:bg-cardDark p-4 rounded-2xl">
+            <div className="w-full h-24 flex flex-col justify-evenly bg-background dark:bg-cardDark p-4 rounded-2xl">
                 <div className='flex space-x-3 items-center w-full'>
                     <div className={`w-2 h-2 rounded-full bg-white dark:bg-black`}></div>
                     <h3 className='font-bold text-textHeader dark:text-textHeaderDark'>Universitas Padjadjaran</h3>

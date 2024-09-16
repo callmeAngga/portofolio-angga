@@ -9,10 +9,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // colors: {
-      //   background: "var(--background)",
-      //   foreground: "var(--foreground)",
-      // },
+      animation: {
+        'scroll-left': 'scrollLeft  linear infinite',
+        'scroll-right': 'scrollRight  linear infinite',
+      },
+      keyframes: {
+        scrollLeft: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        scrollRight: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
       width: {
         '150': '40rem'
       },
