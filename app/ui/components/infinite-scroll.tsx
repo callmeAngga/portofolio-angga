@@ -26,7 +26,7 @@ const developmentTools = [
 ];
 
 export default function InfiniteSkill() {
-    const scrollRef = useRef<HTMLDivElement>(null)
+    // const scrollRef = useRef<HTMLDivElement>(null)
 
     const leftScrollRef = useRef<HTMLDivElement>(null);
     const rightScrollRef = useRef<HTMLDivElement>(null);
@@ -67,8 +67,13 @@ export default function InfiniteSkill() {
             <div ref={leftScrollRef} className="scroller overflow-hidden">
                 <div className="scroll_inner flex space-x-24 animate-scroll-left">
                     {programmingLanguages.map((logo, index) => (
-                        <div key={index} className="p-1 flex-shrink-0">
-                            <Image src={logo} alt={`Programming language ${index + 1}`} height={70} className="opacity-70" />
+                        <div key={index} className="flex-shrink-0">
+                            <Image
+                                src={logo}
+                                alt={`Programming language ${index + 1}`}
+                                height={70}
+                                className="opacity-70 grayscale"
+                            />
                         </div>
                     ))}
                 </div>
@@ -76,8 +81,13 @@ export default function InfiniteSkill() {
             <div ref={rightScrollRef} className="scroller overflow-hidden">
                 <div className="scroll_inner flex space-x-24 animate-scroll-right">
                     {developmentTools.map((logo, index) => (
-                        <div key={index} className="p-1 flex-shrink-0">
-                            <Image src={logo} alt={`Development tool ${index + 1}`} height={70} className="opacity-70" />
+                        <div key={index} className="flex-shrink-0">
+                            <Image
+                                src={logo}
+                                alt={`Development tool ${index + 1}`}
+                                height={70}
+                                className="opacity-70 grayscale"
+                            />
                         </div>
                     ))}
                 </div>

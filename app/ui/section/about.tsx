@@ -1,6 +1,6 @@
 // import Image from "next/image"
 import ReactCountryFlag from "react-country-flag"
-import CardAccent from "../components/card"
+import CardAccent from "../components/cardAccent"
 
 export default function About() {
     return (
